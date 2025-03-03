@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+      
+      <header>
+        <h1>JS Todo List</h1>
+      </header>
+      <form>
+        <input type="text" class="todo-input" id="todo-text-input" />
+        <button class="todo-button" type="button" onclick="addTodo()">
+          <i class="fas fa-plus-square"></i>
+        </button>
+        <div class="select">
+          <select name="todos" class="filter-todo" onchange="handleFilter(this)">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
+        </div>
+      </form>
+      <div class="modal" id="modal">
+        <button class="close-modal-btn" onclick="closeModal()"><i class="fas fa-times-circle"></i></button>
+          <form class="edit-form">
+              <input type="text" id="edit-text">
+              <button onclick="handleEdit()">Edit</button>
+          </form>
+      </div>
+    <div class="todo-container">
+      <ul class="todo-list"></ul>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
